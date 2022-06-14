@@ -7,7 +7,7 @@ public class DictionaryService implements IDictionaryService{
 
    private static Map<String, String> listDictionary = new LinkedHashMap<>();
     static {
-        listDictionary.put("Dog","Hảo Gâu Gâu");
+        listDictionary.put("Dog","Con Chó");
         listDictionary.put("Cat","Mèo");
         listDictionary.put("Tree","Cây");
         listDictionary.put("Pus","Mũ");
