@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class Dictionary {
+public class DictionaryController {
     private IDictionaryService iDictionaryService = new DictionaryService();
     @GetMapping("")
     public String home(){
