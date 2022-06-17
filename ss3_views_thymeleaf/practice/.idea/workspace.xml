@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0a8f28f-3724-4d14-86c3-da15a094586e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/java/com/product/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/java/com/product/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/java/com/product/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/webapp/WEB-INF/views/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/Product Management/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss1_introduction_to_spring_mvc/exercise/Currency conversion/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss1_introduction_to_spring_mvc/exercise/Currency conversion/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Computer/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Computer/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Computer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Computer/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Sandwich/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss2_string_controller/exercise/Sandwich/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Electronic Mailbox/src/main/java/com/electronic_mail/controller/ElectronicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Electronic Mailbox/src/main/java/com/electronic_mail/controller/ElectronicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Electronic Mailbox/src/main/java/com/electronic_mail/service/IElectronicMailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Electronic Mailbox/src/main/java/com/electronic_mail/service/IElectronicMailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Medical Declaration/src/main/java/com/declaration/controller/DeclarationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss4_data_binding_form/exercise/Medical Declaration/src/main/java/com/declaration/controller/DeclarationController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Agfpr10dSWouswWqun4Z2tPhNJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0a8f28f-3724-4d14-86c3-da15a094586e" name="Default Changelist" comment="" />
+      <created>1655436334890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655436334890</updated>
+      <workItem from="1655436336140" duration="5000" />
+    </task>
+    <servers />
+  </component>
+</project>
