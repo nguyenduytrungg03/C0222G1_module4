@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ElectronicController {
     @Autowired
-    IElectronicMailService iElectronicMailService;
+    private IElectronicMailService iElectronicMailService;
 
     @GetMapping("")
     public String home(Model model) {

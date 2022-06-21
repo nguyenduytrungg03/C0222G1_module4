@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DeclarationController {
 
     @Autowired
-    IDeclarationService iDeclarationService;
+    private IDeclarationService iDeclarationService;
 
     @GetMapping("")
     public String home(Model model) {
