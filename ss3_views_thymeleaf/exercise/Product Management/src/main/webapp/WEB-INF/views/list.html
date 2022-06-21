@@ -25,7 +25,6 @@
     </style>
 </head>
 <body class="h-100">
-
 <p>
     <a th:href="@{create}">
         Add new customer
@@ -35,7 +34,6 @@
 <form action="/search" th:object="${product}">
     <input type="text" th:field="*{name}">
     <input type="submit" value="Search">
-
 </form>
 
 <table border="1">
