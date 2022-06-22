@@ -27,6 +27,10 @@
         Add new Blog
     </a>
 </p>
+<form action="/search" th:object="${product}">
+    <input type="text" th:field="*{name}">
+    <input type="submit" value="Search">
+</form>
 <table id="product" class="table table-light table-striped">
     <thead>
     <tr>
