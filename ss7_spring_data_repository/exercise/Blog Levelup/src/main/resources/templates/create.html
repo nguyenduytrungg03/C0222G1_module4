@@ -16,6 +16,13 @@
         <label>Name Content</label>
         <input type="text" th:field="*{content}"/>
     </div>
+    <div>
+        <label>Category</label>
+        <select th:field="*{category}">
+            <option th:each="category: ${listCategory}" th:value="${category.idCategory}" th:text="${category.nameCategory}">
+            </option>
+        </select>
+    </div>
     <input type="submit" value="Save">
 </form>
 </body>

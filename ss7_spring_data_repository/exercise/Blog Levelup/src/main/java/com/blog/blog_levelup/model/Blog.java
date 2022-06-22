@@ -1,4 +1,4 @@
-package com.blog.model;
+package com.blog.blog_levelup.model;
 
 import javax.persistence.*;
 
@@ -13,6 +13,9 @@ public class Blog {
     private String content;
     @Column(name = "status_delete")
     private int statusDelete;
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Category category;
 
     public Blog() {
     }
@@ -22,6 +25,14 @@ public class Blog {
         this.nameBlog = nameBlog;
         this.content = content;
         this.statusDelete = statusDelete;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Integer getIdBlog() {
@@ -55,4 +66,6 @@ public class Blog {
     public void setStatusDelete(int statusDelete) {
         this.statusDelete = statusDelete;
     }
+
+
 }

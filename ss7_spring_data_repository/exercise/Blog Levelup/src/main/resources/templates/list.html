@@ -27,28 +27,44 @@
         Add new Blog
     </a>
 </p>
-<table id="product" class="table table-light table-striped">
-    <thead>
+<form action="/search" method="post">
+    <input type="text" name="name" >
+    <input type="submit" value="Search">
+</form>
+
+<table id="blog" class="table table-light table-striped">
     <tr>
         <th>ID Blog</th>
         <th>Name Blog</th>
         <th style="text-align: center">Content Blog</th>
+        <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
     </tr>
-    </thead>
-    <tbody>
+
     <tr th:each="blog, rowStat : ${listBlog}">
         <td th:text="${blog.idBlog}"></td>
         <td th:text="${blog.nameBlog}"></td>
         <td th:text="${blog.content}"></td>
+        <td th:text="${blog.category.nameCategory}"></td>
         <td><a th:href="@{/delete/__${blog.idBlog}__}">Delete</a></td>
         <td><a th:href="@{edit/__${blog.idBlog}__}">Edit</a></td>
         <td><a th:href="@{/view/__${blog.idBlog}__}">View</a></td>
     </tr>
-    </tbody>
+
 </table>
+<div>
+    <span>
+        <a th:if = "${listBlog.hasPrevious()}" th:href="@{/(page = ${listBlog.number - 1})}">Previous</a>
+    </span>
+    <span th:each="pageNo: ${#numbers.sequence(0,listBlog.totalPages - 1)}">
+        <a th:href="@{/(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+    <span>
+        <a th:if = "${listBlog.hasNext()}" th:href="@{/(page = ${listBlog.number +1})}">Next</a>
+    </span>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

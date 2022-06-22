@@ -13,7 +13,14 @@
 
     Content <input th:field="*{content}"><br>
 
+    <label>Category</label>
+    <select th:field="*{category}">
+        <option th:each="category: ${categoryList}" th:value="${category.idCategory}" th:text="${category.nameCategory}">
+        </option>
+    </select>
+<div>
     <button type="submit">update</button>
+</div>
 </form>
 </body>
 </html>
