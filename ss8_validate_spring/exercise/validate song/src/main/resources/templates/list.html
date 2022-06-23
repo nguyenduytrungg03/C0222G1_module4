@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MUSIC</title>
+</head>
+<body>
+<p>
+    <a href="/create" >
+        Add new Song
+    </a>
+</p>
+
+
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>ID</th>
+        <th>Tên ca khúc</th>
+        <th>Tên nghệ sĩ</th>
+        <th>Thể loại</th>
+        <th colspan="2">Action</th>
+    </tr>
+    <tr th:each="music,loop: ${musicList}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${music.idMusic}"></td>
+        <td th:text="${music.nameMusic}"></td>
+        <td th:text="${music.nameSinger}"></td>
+        <td th:text="${music.category}"></td>
+        <td><a th:href="@{/delete/__${music.idMusic}__}">Delete</a></td>
+        <td><a th:href="@{edit/__${music.idMusic}__}">Edit</a></td>
+    </tr>
+</table>
+<div>
+    <span>
+        <a th:if = "${musicList.hasPrevious()}" th:href="@{/(page = ${musicList.number - 1})}">Previous</a>
+    </span>
+    <span th:each="pageNo: ${#numbers.sequence(0,musicList.totalPages - 1)}">
+        <a th:href="@{/(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+    <span>
+        <a th:if = "${musicList.hasNext()}" th:href="@{/(page = ${musicList.number +1})}">Next</a>
+    </span>
+</div>
+</body>
+</html>
