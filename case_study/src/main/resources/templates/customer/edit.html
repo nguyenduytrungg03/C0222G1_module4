@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${customer}" action="/edit" method="post">
+
+    <input th:field="*{idCustomer}" hidden>
+
+    <div>Mã Khách Hàng <input th:field="*{codeCustomer}"></div>
+
+    <div>Tên Khách Hàng <input th:field="*{name}"></div>
+
+    <div>Tên Khách Hàng <input type="date" th:field="*{birthday}"></div>
+
+    <div>
+    <label>Giới Tinh</label>
+    <select th:field="*{gender}">
+            <option  th:value="3">--Gender--</option>
+            <option th:value="0" th:text="Male"></option>
+            <option th:value="1" th:text="Female"></option>
+    </select>
+    </div>
+
+   <div> Cmnd Khách Hàng <input th:field="*{codeCard}"></div>
+
+    <div></div>SĐT Khách Hàng <input th:field="*{numberPhone}"></div>
+
+    <div></div>Email Khách Hàng <input th:field="*{email}"></div>
+
+    <div>Địa Chỉ Khách Hàng <input th:field="*{address}"></div>
+
+    <div>
+        <label>Loại Khách</label>
+        <select th:field="*{customerType}">
+            <option value="" th:text="--type--"></option>
+            <option th:each="customerType: ${customerTypeList}"
+                    th:value="${customerType.codeCustomerType}"
+                    th:text="${customerType.customerTypeName}"></option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">update</button>
+    </div>
+</form>
+</body>
+</html>

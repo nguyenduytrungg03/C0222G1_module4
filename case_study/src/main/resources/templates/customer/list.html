@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer</title>
+    <link rel="stylesheet" href="/https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .myheader {
+            height: 10vh !important;
+        }
+
+        .content {
+            height: 80vh !important;
+            margin-top: 14px !important;
+        }
+
+        .footer {
+            height: 6vh !important;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Customer </h2>
+</div>
+<p>
+    <a th:href="@{/customer/create}">
+        Add new Customer
+    </a>
+</p>
+<form action="customer/search" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Search">
+</form>
+
+<table id="customer" class="table table-light table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Mã Khách Hàng</th>
+        <th>Tên Khách Hàng</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Cmnd</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Địa Chỉ</th>
+        <th>Loại Khách</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="customer, rowStat : ${listCustomer}">
+        <td th:text="${customer.idCustomer}"></td>
+        <td th:text="${customer.codeCustomer}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.birthday}"></td>
+        <th:block th:if="${customer.gender == 1}">
+            <th>Male</th>
+        </th:block>
+        <th:block th:if="${customer.gender == 0}">
+            <th>Female</th>
+        </th:block>
+        <td th:text="${customer.codeCard}"></td>
+        <td th:text="${customer.numberPhone}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.customerType.customerTypeName}"></td>
+        <td><a th:href="@{/customer/delete/__${customer.idCustomer}__}">Delete</a></td>
+        <td><a th:href="@{/customer/edit/__${customer.idCustomer}__}">Edit</a></td>
+    </tr>
+
+</table>
+<div>
+    <span>
+        <a th:if="${listCustomer.hasPrevious()}" th:href="@{/customer(page = ${listCustomer.number - 1})}">Previous</a>
+    </span>
+    <span th:each="pageNo: ${#numbers.sequence(0,listCustomer.totalPages - 1)}">
+        <a th:href="@{/customer(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+    <span>
+        <a th:if="${listCustomer.hasNext()}" th:href="@{/customer(page = ${listCustomer.number +1})}">Next</a>
+    </span>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+<script src="../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#product').dataTable({
+            "dom": "lrtip",
+            "lengthChange": false,
+            "pageLength": 2
+        });
+    });
+</script>
+</body>
+</html>

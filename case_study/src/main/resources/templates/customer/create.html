@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add Customer</h3>
+<form th:action="@{/save}" th:object="${customer}" method="post">
+    <input type="hidden" th:field="*{idCustomer}">
+    <div>
+        <label>Mã Khách Hàng</label>
+        <input type="text" th:field="*{codeCustomer}">
+    </div>
+    <div>
+        <label>Tên Khách Hàng</label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+        <label>Ngày sinh</label>
+        <input type="date" th:field="*{birthday}"/>
+    </div>
+    <div>
+        <label>Giới tính</label>
+        <select th:field="*{gender}">
+            <option  th:value="3">--Gender--</option>
+            <option th:value="0" th:text="Male"></option>
+            <option th:value="1" th:text="Female"></option>
+        </select>
+    </div>
+    <div>
+        <label>CMND</label>
+        <input type="text" th:field="*{codeCard}"/>
+    </div>
+    <div>
+        <label>Số điện thoại</label>
+        <input type="text" th:field="*{numberPhone}"/>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" th:field="*{email}"/>
+    </div>
+    <div>
+        <label>Địa chỉ</label>
+        <input type="text" th:field="*{address}"/>
+    </div>
+    <div>
+        <label>Loại Khách</label>
+        <select th:field="*{customerType}">
+            <option th:each="customerType: ${customerTypeList}"
+                    th:value="${customerType.codeCustomerType}"
+                    th:text="${customerType.customerTypeName}">
+            </option>
+        </select>
+    </div>
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>
