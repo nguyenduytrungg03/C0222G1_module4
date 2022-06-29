@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<form th:action="@{/save}" th:object="${orderBook}" method="post">
+    <div>
+        <label>ID sách</label>
+        <input type="text" th:field="*{book.idBook}">
+    </div>
+
+    <div>
+        <label>người mượn</label>
+        <input type="text" th:field="*{nameOrd}">
+    </div>
+
+    <div>
+        <label>Mã mượn</label>
+        <input type="text" th:field="*{codeRandom}">
+    </div>
+
+<!--    <div>-->
+<!--        <label>Thể loại</label>-->
+<!--        <input type="text" th:field="*{book}">-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <label>Ngày ra mắt</label>-->
+<!--        <input type="date" th:field="*{meetingDate}">-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <label>Số lượng</label>-->
+<!--        <input type="text" th:field="*{amount}">-->
+<!--    </div>-->
+
+    <input type="submit" value="Save">
+</form>
 </body>
 </html>
