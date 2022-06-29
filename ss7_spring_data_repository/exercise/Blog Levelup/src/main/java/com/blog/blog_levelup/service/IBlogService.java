@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBlogService {
     List<Blog> findAll();
@@ -17,7 +18,7 @@ public interface IBlogService {
 
     void save(Blog blog);
 
-    Object findById(int id);
+    Optional findById(int id);
 
     void update(Blog blog);
 
