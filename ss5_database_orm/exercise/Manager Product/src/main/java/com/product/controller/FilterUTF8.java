@@ -1,4 +1,4 @@
-package com.blog.controller;
+package com.product.controller;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

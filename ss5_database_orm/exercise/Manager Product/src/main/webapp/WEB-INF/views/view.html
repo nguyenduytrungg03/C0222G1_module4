@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        #cal {
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 0 20px 20px;
+            background: darkcyan;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="cal">
+    <h3>Views Product</h3>
+    <p>
+        <a th:href="@{/}">
+            Back to product list
+        </a>
+    </p>
+    <div>
+        <div>
+            <p>Id sản phẩm: <label th:text="${product.idProduct}"></label></p>
+        </div>
+        <div>
+            <p>Tên sản phẩm: <label th:text="${product.name}"></label></p>
+        </div>
+        <div>
+            <p>Giá sản phẩm: <label th:text="${product.price}"></label></p>
+        </div>
+        <div>
+            <p>Mô tả: <label th:text="${product.status}"></label></p>
+        </div>
+        <div>
+            <p>Nhà sản xuất: <label th:text="${product.producer}"></label></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,10 +1,65 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>
+    Danh sách sản phẩm
+</h1>
+
+<div>&nbsp;</div>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="11">
+                <div class="W-100 footer">
+                    <a href="/create">Thêm mới</a>
+                    <form action="/search">
+                        <label>
+                            <input type="text" name="name">
+                        </label>
+                        <button type="submit">Tìm kiếm</button>
+                    </form>
+                </div>
+            </th>
+        </tr>
+        <tr class="w-100">
+            <th>No.</th>
+            <th>ID sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá sản phẩm</th>
+            <th>Mô tả</th>
+            <th>Nhà sản xuất</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product,loop : ${productList}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${product.idProduct}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.status}"></td>
+            <td th:text="${product.producer}"></td>
+            <td><a th:href="@{/edit/{id}(id=${product.idProduct})}">Edit</a></td>
+            <td><a th:href="@{/delete/{id}(id=${product.idProduct})}">Delete</a></td>
+            <td><a th:href="@{/view/{id}(id=${product.idProduct})}">View</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

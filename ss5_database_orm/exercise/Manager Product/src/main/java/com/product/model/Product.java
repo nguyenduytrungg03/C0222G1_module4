@@ -1,21 +1,28 @@
 package com.product.model;
 
+import javax.persistence.*;
+
+@Entity(name = "product")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private double price;
     private String describe;
     private String note;
+    @Column(name = "status_delete")
+    private int status_delete;
 
     public Product() {
     }
 
-    public Product(String id, String name, double price, String describe, String note) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.describe = describe;
-        this.note = note;
+    public int getStatus_delete() {
+        return status_delete;
+    }
+
+    public void setStatus_delete(int status_delete) {
+        this.status_delete = status_delete;
     }
 
     public String getId() {

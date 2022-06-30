@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/web_music?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/wb_product?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">123456</property>
         <!--        Hiển thị cau lệnh query -->
@@ -14,6 +14,6 @@
         <!--        Ngoài ra còn có create và none.-->
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <mapping class="com.model.Music"/>
+        <mapping class="com.model.Product"/>
     </session-factory>
 </hibernate-configuration>

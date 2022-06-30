@@ -15,7 +15,6 @@ public class FilterUTF8 implements Filter {
     }
 
     public void init(FilterConfig config) throws ServletException {
-
     }
 
 }

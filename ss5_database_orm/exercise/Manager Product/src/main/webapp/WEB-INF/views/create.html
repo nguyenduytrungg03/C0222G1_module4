@@ -1,10 +1,51 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Sản Phẩm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="/resources/bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/resources/datatables/css/dataTables.bootstrap4.min.css"/>
+    <style>
+        .center-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body>
-$END$
+<body class="bg-dark">
+<div class="container">
+    <div class=" bg-light">
+        <div class="h1 center-box"> Thêm mới sản phẩm</div>
+        <form th:object="${product}" action="/save" method="post">
+            <div>
+                <input th:field="*{idProduct}" hidden>
+            </div>
+            <div>
+                <label>Nhập tên sản phẩm</label>
+                <input th:field="*{name}">
+            </div>
+
+            <div>
+                <label>Nhập giá sản phẩm</label>
+                <input th:field="*{price}">
+            </div>
+
+            <div class="form-group">
+                <label>Mô tả</label>
+                <input th:field="*{status}">
+            </div>
+
+            <div class="form-group">
+                <label>Nhà sản xuất</label>
+                <input th:field="*{producer}">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</div>
 </body>
 </html>
