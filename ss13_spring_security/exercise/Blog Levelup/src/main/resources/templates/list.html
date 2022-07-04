@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/resources/bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/resources/datatables/css/dataTables.bootstrap4.min.css"/>
+    <style>
+        .center-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .head-text {
+            font-size: 30px;
+            font-weight: bold;
+            height: 10%;
+        }
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        table.dataTable thead th {
+            border-top: none;
+        }
+    </style>
+</head>
+<body class="h-100">
+<nav class="navbar navbar-light bg-dark text-white center-box head-text">
+    DANH SÁCH BLOG
+</nav>
+<p>
+    <a th:href="@{/create}">
+        Add new Blog
+    </a><br>
+    <input type="text" name="search" id="search">
+    <button type="button" id="searchButton">Tìm kiếm</button> <br>
+    <button type="button" id="addButton">Tải thêm</button>
+</p>
+
+<table id="blog" class="table text-center table-striped table-hover bg-white w-100">
+    <tr class="w-100">
+        <th>ID Blog</th>
+        <th>Name Blog</th>
+        <th style="text-align: center">Content Blog</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+<tbody id="bodyTable">
+    <tr th:each="blog, rowStat : ${listBlog}">
+        <td th:text="${blog.idBlog}"></td>
+        <td th:text="${blog.nameBlog}"></td>
+        <td th:text="${blog.content}"></td>
+        <td th:text="${blog.category.nameCategory}"></td>
+        <td><a th:href="@{/delete/__${blog.idBlog}__}">Delete</a></td>
+        <td><a th:href="@{edit/__${blog.idBlog}__}">Edit</a></td>
+        <td><a th:href="@{/view/__${blog.idBlog}__}">View</a></td>
+    </tr>
+</tbody>
+</table>
+
+<!--<script type="text/javascript">-->
+
+<!--    function getListBlog(blog) {-->
+<!--        return '<tr>'+-->
+<!--            '<td>'+blog.idBlog+'</td>'+-->
+<!--            '<td>'+blog.nameBlog+'</td>' +-->
+<!--            '<td>'+blog.content+'</td>' +-->
+<!--            '<td>'+blog.category.nameCategory+'</td>'+-->
+<!--            '<td><a class="editBlog" href="/edit/'+blog.idBlog+'">Edit</a></td>' +-->
+<!--            '<td><a class="deleteBlog"  href="/delete/'+blog.idBlog+'">Delete</a></td>' +-->
+<!--            '<td><a class="viewBlog"  href="/view/'+blog.idBlog+'">View</a></td>' +-->
+<!--            '</tr>';-->
+<!--    }-->
+
+<!--    $(document).ready(function () {-->
+<!--        $('#searchButton').click(function () {-->
+<!--            let search = document.getElementById("search").value-->
+<!--            $.ajax({-->
+<!--                type: "GET",-->
+<!--                url: `/blogs/${search}`,-->
+<!--                success: function (data) {-->
+<!--                    console.log(data.content.length)-->
+<!--                    let content = '';-->
+<!--                    for (let i = 0; i < data.content.length; i++) {-->
+<!--                        content += getListBlog(data.content[i])-->
+<!--                    }-->
+<!--                document.getElementById('bodyTable').innerHTML = content;-->
+<!--                }-->
+<!--            });-->
+<!--        })-->
+<!--    })-->
+
+<!--    let ascending = 2;-->
+<!--    $(document).ready(function () {-->
+<!--        $('#addButton').click(function () {-->
+<!--            ascending = ascending+1;-->
+<!--            $.ajax({-->
+<!--                type: "GET",-->
+<!--                url: `/blogs/load/${ascending}`,-->
+<!--                success: function (data) {-->
+<!--                    console.log(data)-->
+<!--                    let content = '';-->
+<!--                    for (let i = 0; i < data.content.length; i++) {-->
+<!--                        content += getListBlog(data.content[i])-->
+<!--                    }-->
+<!--                    document.getElementById('bodyTable').innerHTML = content;-->
+<!--                }-->
+<!--            });-->
+<!--        })})-->
+<!--</script>-->
+</body>
+</html>
